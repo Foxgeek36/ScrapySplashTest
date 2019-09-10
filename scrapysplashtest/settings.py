@@ -45,12 +45,14 @@ ROBOTSTXT_OBEY = False
 
 # Enable or disable spider middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
+# 此处为Splash配置的Spider中间件/ ->key set 2
 SPIDER_MIDDLEWARES = {
     'scrapy_splash.SplashDeduplicateArgsMiddleware': 100,
 }
 
 # Enable or disable downloader middlewares
 # See http://scrapy.readthedocs.org/en/latest/topics/downloader-middleware.html
+# 此处为Splash配置的下载中间件/ ->key set 2
 DOWNLOADER_MIDDLEWARES = {
     'scrapy_splash.SplashCookiesMiddleware': 723,
     'scrapy_splash.SplashMiddleware': 725,
@@ -94,9 +96,12 @@ KEYWORDS = ['iPad']
 
 MAX_PAGE = 100
 
+# 配置Splash运行的主机&端口地址/ 此处配置为本地主机及接口 ->key set 1
 SPLASH_URL = 'http://localhost:8050'
 
+# 此处为配置的去重的类 >key set 3
 DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
+# 此处为配置Cache存储HTTPCACHE_STORAGE ->key set 4
 HTTPCACHE_STORAGE = 'scrapy_splash.SplashAwareFSCacheStorage'
 
 MONGO_URI = 'localhost'
